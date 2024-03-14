@@ -6,10 +6,10 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="card-title">Create Payment</h1>
+                        <h1 class="card-title">Create Contact Information</h1>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('payments.store') }}">
+                        <form method="POST" action="{{ route('contactInformations.store') }}">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name:</label>

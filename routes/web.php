@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\ContactInformationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StudentCourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,11 @@ use App\Http\Controllers\PaymentController;
 */
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('main');
 });
 
 Route::resource('students', StudentController::class);
 Route::resource('teachers', TeacherController::class);
 Route::resource('courses', CourseController::class);
-Route::resource('payments', PaymentController::class);
+Route::resource('contactInformations', ContactInformationController::class);
+Route::get('student-courses', [StudentCourseController::class, 'index'])->name('student-courses.index');

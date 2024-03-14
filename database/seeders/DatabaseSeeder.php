@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\ContactInformation;
 use App\Models\Course;
-use App\Models\Payment;
 use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Database\Seeder;
@@ -29,8 +29,8 @@ class DatabaseSeeder extends Seeder
             $course->save();
         });
 
-        // Seed payments for students
-        Payment::factory(20)->create();
+        // Seed contact informations for students
+        ContactInformation::factory(20)->create();
 
         // Seed student-course relationships
         $students = Student::all();

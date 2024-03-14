@@ -19,6 +19,14 @@
                                 <label for="description" class="form-label">Description:</label>
                                 <input type="textarea" class="form-control" name="description" id="description">
                             </div>
+                            <div class="mb-3">
+                                <label for="teacher_id" class="form-label">Teacher:</label>
+                                <select name="teacher_id" id="teacher_id" class="form-select">
+                                    @foreach($teachers as $teacher)
+                                        <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

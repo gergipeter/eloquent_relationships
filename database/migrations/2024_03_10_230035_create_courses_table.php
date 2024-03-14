@@ -18,9 +18,6 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->foreignId('teacher_id')->nullable()->constrained()->onDelete('cascade');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->decimal('price', 8, 2);
             $table->timestamps();
         });
     }

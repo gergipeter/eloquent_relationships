@@ -11,9 +11,9 @@ class Student extends Model
 
     protected $fillable = ['name', 'email'];
 
-    public function payments()
+    public function contactInformation()
     {
-        return $this->hasOne(Payment::class);
+        return $this->hasOne(ContactInformation::class);
     }
 
     public function courses()

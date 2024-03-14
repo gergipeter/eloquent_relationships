@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">Eloquent Relationships</a>
+            <a class="navbar-brand" href="/">Eloquent Relationships</a>
 
             <!-- Navbar toggler button for mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +37,13 @@
                     <li class="nav-item {{ Request::is('teachers*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('teachers.index') }}">Teachers</a>
                     </li>
-                    <!-- Payments -->
-                    <li class="nav-item {{ Request::is('payments*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('payments.index') }}">Payments</a>
+                    <!-- Contact Informations -->
+                    <li class="nav-item {{ Request::is('contactInformations*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('contactInformations.index') }}">Contact Informations</a>
+                    </li>
+                    <!-- Student-Course Relationship -->
+                    <li class="nav-item {{ Request::is('student-courses*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('student-courses.index') }}">Student-Course Relation</a>
                     </li>
                 </ul>
             </div>

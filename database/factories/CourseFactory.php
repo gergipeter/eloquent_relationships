@@ -29,9 +29,6 @@ class CourseFactory extends Factory
             'name' => $this->faker->randomElement($courses) . ' Course',
             'description' => 'This course covers ' . $courseDescription . ' and related technologies. Students will learn the fundamentals and best practices of ' . $courseDescription . ' development.',
             'teacher_id' => Teacher::factory(),
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-            'price' => $this->faker->randomFloat(2, 50, 500) - 0.01,
         ];
     }
 }

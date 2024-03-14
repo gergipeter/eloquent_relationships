@@ -14,9 +14,6 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Teacher</th>
-                    <th>Price</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,11 +24,23 @@
                         <td>{{ $course->name }}</td>
                         <td>{{ $course->description }}</td>
                         <td>{{ $course->teacher->name }}</td>
-                        <td>{{ $course->price }}</td>
-                        <td>{{ $course->start_date }}</td>
-                        <td>{{ $course->end_date }}</td>
                         <td>
-                            @include('includes.crud_buttons', ['route' => 'courses', 'data' => $course])
+                            <!-- Show Button -->
+                            <a href="{{ route('courses.show', $course) }}" class="btn btn-success btn-sm">
+                                <i class="bi bi-eye"></i> Show
+                            </a>
+                            <!-- Edit Button -->
+                            <a href="{{ route('courses.edit', $course) }}" class="btn btn-primary btn-sm">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <!-- Delete Button -->
+                            <form action="{{ route('courses.destroy', $course) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this contact information?')">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

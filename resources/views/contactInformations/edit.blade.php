@@ -6,15 +6,15 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="card-title">Edit Payments</h1>
+                        <h1 class="card-title">Edit Contact Informations</h1>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('payments.update', $payment) }}">
+                        <form method="POST" action="{{ route('contactInformations.update', $contactInformation) }}">
                             @csrf
                             @method('PUT')
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" class="form-control" name="name" id="name" value="{{ $payment->name }}">
+                                <label for="name" class="form-label">Student Name:</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{ $contactInformation->student->name }}">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
